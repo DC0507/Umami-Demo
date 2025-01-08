@@ -861,15 +861,18 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => env('AZURE_MYSQL_DBNAME'),
-  'username' => env('AZURE_MYSQL_USERNAME'),
-  'password' => env('AZURE_MYSQL_PASSWORD'),
+  'database' => 'drupal-app-database',
+  'username' => 'qbsrtunwob',
+  'password' => 'KjvL$$Ai4YAof$U6',
   'prefix' => '',
-  'host' => env('AZURE_MYSQL_HOST'),
+  'host' => 'drupal-app-server.mysql.database.azure.com',
   'port' => '3306',
   'isolation_level' => 'READ COMMITTED',
   'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
   'driver' => 'mysql',
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+  'pdo' => array(
+    PDO::MYSQL_ATTR_SSL_CA => '/home/site/wwwroot/ssl/DigiCertGlobalRootCA.crt.pem'
+  ),
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_yjH_IvplXvVnIcikCnSJm5mSsCaCOObvKLyaH3kz19FihNmYKYKg0Nvx6iS70MzjlPjFMC4XIg/sync';
