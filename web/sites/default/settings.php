@@ -861,11 +861,11 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'umami',
-  'username' => '{your-username}',
-  'password' => '{your-password}',
-  'prefix' => 'demo_umami',
-  'host' => 'kedsouza-mysql.mysql.database.azure.com',
+  'database' => env('AZURE_MYSQL_DBNAME'),
+  'username' => env('AZURE_MYSQL_USERNAME'),
+  'password' => env('AZURE_MYSQL_PASSWORD'),
+  'prefix' => '',
+  'host' => env('AZURE_MYSQL_HOST'),
   'port' => '3306',
   'isolation_level' => 'READ COMMITTED',
   'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
